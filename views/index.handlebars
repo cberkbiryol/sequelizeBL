@@ -1,0 +1,55 @@
+<div class=container>
+    <div class="jumbotron">
+        <h1 class="display-2 topHead">Bucket List</h1>
+        <p class="lead topHead2 display-4"> Keep track of your memorable moments...</p>
+        <hr class="my-2">
+        <p class="topHead2 display-5"> Make your own bucket list and keep track of what you have acomplished!</p>
+        <p class="topHead2 display-5"> Use the form below to add items to your bucket list and cross them out when you fulfill each item!</p>
+        <br>
+        <form class="form-group addItem">
+          <input type="text" name="activity" id="newItem" class="form-control" placeholder="Enter your dream here...">
+          <button type="submit" class="btn btn-primary my-2 addItem">     
+                <i class="material-icons">
+                    playlist_add
+                </i>
+                Add to List
+          </button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="text-center"> Here is Your Bucket List... </h1>
+            </div>
+            <div class="col-6">
+                <h1 class="text-center"> Already completed these... Amazing! </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <ul>
+                    {{#each bucketlist}} 
+                        {{#unless crossed_off}} 
+                            {{> list/list-block crossed=false}} 
+                        {{/unless}} 
+                    {{/each }}
+                </ul>
+            </div>
+            <div class="col-6">                
+                <ul>
+                    {{#each bucketlist}} 
+                        {{#if crossed_off}} 
+                            {{> list/list-block crossed=true}} 
+                        {{/if}} 
+                    {{/each }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<h2> </h2>
+</div>

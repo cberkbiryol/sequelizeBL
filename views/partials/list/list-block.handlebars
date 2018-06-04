@@ -1,0 +1,32 @@
+<li class="BLitem" data-item="{{activity}}">
+    {{#if crossed}}
+    <span class="crossed_off">
+        {{activity}}
+    </span>    
+    {{else}}
+    <span>
+        {{activity}}
+    </span>        
+    {{/if}}
+    <input type="text" class="form-control form-control-lg edit" style='display: none;'>
+    <br>
+    <button type="button" class="btn btn-warning crossItem" data-id={{id}} data-newstat="{{crossed}}">
+            {{#if crossed}} 
+            <i class="material-icons">
+                backspace
+            </i>
+                Back to list! 
+            {{else}} 
+            <i class="material-icons">
+                done_outline
+            </i>
+            cross off 
+            {{/if}}
+    </button>
+    <button type="button" class="btn btn-danger deleteItem" data-id={{id}} >
+        <i class="material-icons">
+            delete_outline
+        </i>
+        Remove
+    </button>
+</li>

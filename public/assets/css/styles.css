@@ -1,0 +1,44 @@
+body {
+    font-family: 'Rancho', cursive;
+    font-size: 1.8rem;
+    background-image: url("https://1.bp.blogspot.com/-aLz66ej-zdQ/UVmu0WOQaiI/AAAAAAAAFIM/hLG0Y9cf43c/s1600/wet-graph-paper-seamless-background.jpg")
+}
+
+.jumbotron {
+    background-image: url("https://news.cnrs.fr/sites/default/files/styles/visuel_principal/public/assets/images/129714169-72dpi.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+h1 {
+    font-family: 'Marck Script', cursive;
+}
+
+.topHead {
+    font-family: 'Fredericka the Great', cursive;    
+}
+
+.topHead2 {
+    font-family: 'Cabin Sketch', cursive;
+}
+
+.crossItem,
+.deleteItem,
+.addItem {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.2rem;
+}
+
+.crossed_off {
+    text-decoration:line-through
+}
+
+.BLitem:hover {
+    font-size: 2rem;
+}
+
+.form-control{
+    background-color: rgba(239, 245, 164, 0.8);
+}

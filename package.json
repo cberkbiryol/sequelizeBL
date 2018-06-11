@@ -1,7 +1,7 @@
 {
-  "name": "bucketList",
+  "name": "sequelizeBL",
   "version": "1.0.0",
-  "description": "Full Stack Web App for keeping a bucket Lits using mysql",
+  "description": "Full Stack Web App for keeping a bucket Lits using mysq and Sequelize",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,19 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cberkbiryol/bucketList.git"
+    "url": "git+https://github.com/cberkbiryol/sequelizeBL.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cberkbiryol/bucketList/issues"
+    "url": "https://github.com/cberkbiryol/sequelizeBL/issues"
   },
-  "homepage": "https://github.com/cberkbiryol/bucketList#readme",
+  "homepage": "https://github.com/cberkbiryol/sequelizeBL#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.10"
   }
 }

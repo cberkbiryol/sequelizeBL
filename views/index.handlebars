@@ -7,7 +7,13 @@
         <p class="topHead2 display-5"> Use the form below to add items to your bucket list and cross them out when you fulfill each item!</p>
         <br>
         <form class="form-group addItem">
-          <input type="text" name="activity" id="newItem" class="form-control" placeholder="Enter your dream here...">
+          <div class="row">
+              <div class="col">
+                  <input type="text" name="activity" id="newItem" class="form-control" placeholder="Enter your dream here...">
+              </div>
+              <div class="col">                  
+              </div>           
+          </div>          
           <button type="submit" class="btn btn-primary my-2 addItem">     
                 <i class="material-icons">
                     playlist_add
@@ -30,7 +36,7 @@
                 <ul>
                     {{#each bucketlist}} 
                         {{#unless crossed_off}} 
-                            {{> list/list-block crossed=false}} 
+                            {{> list/list-block crossed=false item=activity iid=id iuser=user.name}} 
                         {{/unless}} 
                     {{/each }}
                 </ul>
@@ -39,7 +45,7 @@
                 <ul>
                     {{#each bucketlist}} 
                         {{#if crossed_off}} 
-                            {{> list/list-block crossed=true}} 
+                            {{> list/list-block crossed=true item=activity iid=id iuser=user.name}}  
                         {{/if}} 
                     {{/each }}
                 </ul>

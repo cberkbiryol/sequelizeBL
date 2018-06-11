@@ -1,32 +1,44 @@
-<li class="BLitem" data-item="{{activity}}">
+<li data-item="{{item}}">
     {{#if crossed}}
-    <span class="crossed_off">
-        {{activity}}
-    </span>    
+        <div class="row">
+            <div class="col">
+                <span class="BLitem crossed_off">{{item}}</span>
+            </div>
+            <div class="col">
+                <p>( done by {{iuser}} )</p>
+            </div>
+        </div>
+        <input type="text" class="form-control form-control-lg edit" style='display: none;'>
+        <div class="form-inline">
+            <button type="button" class="btn btn-warning crossItem mx-1" data-id={{iid}} data-newstat="{{crossed}}">
+                <i class="material-icons">
+                    backspace
+                </i>
+            Back to list!
+            <button type="button" class="btn btn-danger deleteItem mx-1" data-id={{iid}}>
+                <i class="material-icons">
+                    delete_outline
+                </i>
+            Remove
+            </button>
+        </div>
     {{else}}
-    <span>
-        {{activity}}
-    </span>        
-    {{/if}}
-    <input type="text" class="form-control form-control-lg edit" style='display: none;'>
-    <br>
-    <button type="button" class="btn btn-warning crossItem" data-id={{id}} data-newstat="{{crossed}}">
-            {{#if crossed}} 
-            <i class="material-icons">
-                backspace
-            </i>
-                Back to list! 
-            {{else}} 
-            <i class="material-icons">
-                done_outline
-            </i>
+        <span class="BLitem">{{item}}</span>
+        <input type="text" class="form-control form-control-lg edit" style='display: none;'>
+        <div class="form-inline">
+            <input type="text" class="form-control form-control-lg mx-1 newUser" placeholder="Enter your name here">
+            <button type="button" class="btn btn-warning crossItem mx-1" data-id={{iid}} data-newstat="{{crossed}}">
+                <i class="material-icons">
+                    done_outline
+                </i>
             cross off 
-            {{/if}}
-    </button>
-    <button type="button" class="btn btn-danger deleteItem" data-id={{id}} >
-        <i class="material-icons">
-            delete_outline
-        </i>
-        Remove
-    </button>
+            </button>
+            <button type="button" class="btn btn-danger deleteItem mx-1" data-id={{iid}}>
+                <i class="material-icons">
+                    delete_outline
+                </i>
+            Remove
+            </button>
+        </div>
+    {{/if}}
 </li>

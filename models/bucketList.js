@@ -1,26 +1,26 @@
-var orm = require("../config/orm")
-
-var bucketlist = {
-    create: function(vals,cb) {
-        orm.insertOne("bucketlist",vals,function(res){
-            cb(res)
-        });
-    },
-    read: function(cb) {
-        orm.selectAll("bucketlist",function(res){
-            cb(res);
-        });
-    },
-    update: function(col,val,cond,cb){
-        orm.updateOne("bucketlist",col,val,cond,function(res){
-            cb(res);
-        });
-    },
-    delete: function(cond,cb){
-        orm.deleteOne("bucketlist",cond,function(res){
-            cb(res);
-        });
-    }    
+module.exports = function(sequelize,DataTypes) {
+    var bucketlist = sequelize.define("bucketlist",{
+        activity: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len:{
+                    args:[1,180],
+                    msg: "The list item needs to be greater than 1 character but shorter than 180 characters long"            
+                }
+            }
+        },
+        crossed_off: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: 0
+        }
+    });
+    bucketlist.associate = function(models){
+        bucketlist.belongsTo(models.user,{
+            foreignKey: {
+                allowNull:true
+            }
+        })
+    }
+    return bucketlist;
 };
-
-module.exports = bucketlist;
